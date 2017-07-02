@@ -64,17 +64,12 @@ public class DailyGrades extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String to = "jackielim8695@gmail.com";
-                String subject = "C347";
                 String message = "Hi Faci \n\n I am .....\n Please see my remarks so far, Thank You \n\n";
                 for (int i = 0; i < dailyCA.size(); i++) {
                     message += " Week : " + dailyCA.get(i).getWeek() + " DG:" + dailyCA.get(i).getDgGrade() + "\n";
                 }
                 Intent email = new Intent(Intent.ACTION_SEND);
-
-                email.putExtra(Intent.EXTRA_SUBJECT, subject);
                 email.putExtra(Intent.EXTRA_TEXT, message);
-
                 //Put essentials like email address, subject & body text
                 email.putExtra(Intent.EXTRA_EMAIL, emails[0]);
                 email.putExtra(Intent.EXTRA_SUBJECT, "Test Email from C347");
